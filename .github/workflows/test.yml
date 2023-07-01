@@ -7,4 +7,4 @@ jobs:
     - name: echo
       run: echo "${{ secrets.SSH_USER }}" > test.txt
     - name: ssh
-      run: cat test.txt
+      run: ssh ${{ secrets.SSH_USER}}@${{ secrets.SSH_HOST }} "cd ~/ && touch ale.txt"
