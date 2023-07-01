@@ -4,7 +4,5 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-    - name: write to file
-      run: echo "job1 test" > test.txt
-    - name: read file
-      run: cat test.txt    
+    - name: echo
+      run: echo "${{ secrets.SSH_USER }}"
