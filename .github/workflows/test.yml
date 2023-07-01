@@ -5,6 +5,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: install keys
-      run: echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa && ssh-keyscan -H ${{ secrets.SSH_HOST }} > ~/.ssh/known_hosts
+      run: echo "${{ secrets.SSH_PK }}" > ~/.ssh/id_rsa && ssh-keyscan -H ${{ secrets.SSH_HOST }} > ~/.ssh/known_hosts
     - name: connect
       run: ssh ${{ secrets.SSH_USER}}@${{ secrets.SSH_HOST }} "cd ~/ && touch ale.txt"
